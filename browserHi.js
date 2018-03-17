@@ -6,8 +6,12 @@ http.createServer(function(request, response) {
     if (request.url !== "/favicon.ico") {
         console.log('访问');
         response.write('Hi, Friend');
+        funcname = 'foo3';
+        func[funcname](response);
+
         func.foo1(response);
         func.foo2(response);
+
         func['foo2'](response);
         func['foo1'](response);
         response.end('');
