@@ -1,6 +1,11 @@
-
 // support many functions
 module.exports = {
+
+    // func3  
+    foo3:function(res){
+        console.log('foo3 has run');
+        res.write('running foo3 on browser');
+    },
 
     // func1
     foo1:function(res){
@@ -15,6 +20,3 @@ module.exports = {
     }
 
 }
-
-// support only one function
-// module.exports = func2;
