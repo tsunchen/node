@@ -6,7 +6,9 @@
 
 var http = require('http');
 //var func = require("./functions/funcall.js")
-var User = require("./modules/User")
+var User = require("./modules/User");
+var Teacher = require("./modules/Teacher");
+var Student = require("./modules/Student");
 
 http.createServer(function(request, response) {
     response.writeHead(200, {'Content-Type': 'text/html;charset=utf-8'});
@@ -14,8 +16,16 @@ http.createServer(function(request, response) {
         console.log('访问');
         response.write('Hi, Friend');
 
-        user = new User(1, '三', 100);
+        user = new User(1, '人', 100);
         user.enter();
+
+        tea = new Teacher(2, '师', 200);
+        tea.enter();
+        tea.teach(response);
+
+        stu = new Student(3, '徒', 300);
+        stu.enter();
+        stu.study(response);
 
         response.end('');
     }
